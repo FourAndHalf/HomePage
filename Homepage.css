@@ -1,0 +1,110 @@
+
+body {
+    background-color: rgb(20, 20, 20);
+    margin: 0px;
+}
+
+#menu {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.menu-item {
+    color: white;
+    font-size: clamp(4rem, 6vw, 7rem);
+    font-family: "Ibarra Real Nova", serif;
+    white-space: nowrap;
+
+    display: block;
+    text-decoration: none;
+    padding: clamp(0.25rem, 0.5vw, 2rem);
+    transition: opacity 400ms ease;
+}
+
+#menu-items {
+    margin-left: clamp(8rem, 8vw, 48rem);
+    z-index: 2;
+}
+
+#menu-items:hover ~ #background-pattern {
+    background-size: 11vmin 11vmin;
+    opacity: 0.5;
+}
+#menu-items:hover ~ #background-image {
+    background-size: 101vmax;
+    opacity: 0.1;
+}
+#menu-items:hover > .menu-item {
+    opacity: 0.3;
+}
+#menu-items:hover > .menu-item:hover {
+    opacity: 1;
+}
+
+#background-pattern {
+    height: 100%;
+    width: 100%;
+
+    background: radial-gradient(
+        rgba(2255, 225, 225, 0.1) 9%,
+        transparent 9%
+    );
+
+    background-position: 100% 100%;
+    background-size: 12vmin 12vmin;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+
+    transition: background-size 800ms ease, 
+                opacity 800ms ease,
+                background-position 800ms ease;
+}
+
+#menu[data-active-index="0"] > #background-pattern {
+    background-position: 0% -25%;
+}
+#menu[data-active-index="1"] > #background-pattern {
+    background-position: 0 -50%;
+}
+#menu[data-active-index="2"] > #background-pattern {
+    background-position: 0% -75%;
+}
+#menu[data-active-index="3"] > #background-pattern {
+    background-position: 0 -100%;
+}
+
+#background-image {
+    height: 100%;
+    width: 100%;
+    background-image: url("https://images.unsplash.com/photo-1492496913980-501348b61469?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2574&q=80");
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 0;
+    background-position: center 40%;
+    background-size: 110vmax;
+    opacity: 0.15;
+
+    transition: background-position 800ms ease,
+                background-size 800ms ease,
+                opacity 800ms ease;
+}
+
+#menu[data-active-index="0"] > #background-image {
+    background-position: center 45%;
+}
+  
+#menu[data-active-index="1"] > #background-image {
+    background-position: center 50%;
+}
+  
+#menu[data-active-index="2"] > #background-image {
+    background-position: center 55%;
+}
+  
+#menu[data-active-index="3"] > #background-image {
+    background-position: center 60%;
+}

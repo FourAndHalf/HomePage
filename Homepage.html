@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | DNA</title>
+    <link rel="icon" type="image/png" href="DNA-logo.png">
+    <link rel="stylesheet" href="Homepage.css">
+</head>
+<body>
+    <div id="menu">
+        <div id="menu-items">
+            <a href="/" class="menu-item">Home</a>
+            <a href="/" class="menu-item">Shop</a>
+            <a href="/" class="menu-item">About</a>
+            <a href="/" class="menu-item">Contact Us</a>
+        </div>
+        <div id="background-pattern">
+        </div>
+        <div id="background-image">
+        </div>
+    </div>
+    <script>
+        const menu = document.getElementById('menu');
+
+        Array.from(document.getElementsByClassName("menu-item"))
+            .forEach((item,index) => {
+                item.onmouseover = () => {
+                    menu.dataset.activeIndex = index;
+                }
+            });
+    </script>
+</body>
+</html>
